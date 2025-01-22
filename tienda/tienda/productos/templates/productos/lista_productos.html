@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>
+    Tienda Online
+</title>
+</head>    
+<body>
+    <h1>Productos de la Tienda</h1>
+    <ul>
+    {% for producto in productos %}
+    <li>
+        <strong>{{producto.nombre}}</strong>
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
