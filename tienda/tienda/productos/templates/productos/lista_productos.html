@@ -6,12 +6,30 @@
 </head>    
 <body>
     <h1>Productos de la Tienda</h1>
-    <ul>
+
     {% for producto in productos %}
-    <li>
-        <strong>{{producto.nombre}}</strong>
-    </li>
+  
+
+   
+        <div style="border:1px solid #000; width:30%;margin-top:10px;">
+            <br>
+       <center> <strong>{{producto.nombre}}</strong> </center>
+        <br>
+    <center><span>Precio: {{producto.precio}} Bs.</span> </center>
+        {% if producto.oferta %}
+        <br>
+            <center><button style="color:white; background-color:red;">¡En oferta!!</button></center>
+        <br>
+        {% else %}
+        <br>
+        <center><button style="color:white; background-color:green;">No esta en oferta</button></center>
+          <br>  
+        {% endif %}
+        </div>
+        
+ 
+    
     {% endfor %}
-</ul>
+
 </body>
 </html>
