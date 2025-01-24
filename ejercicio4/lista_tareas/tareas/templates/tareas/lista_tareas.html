@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+
+<head>
+    <title>Lista de Tareas </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+     <center>   <h1>Mi agenda</h1>
+        <img src="{% static 'images/grinch.png' %}" class="logo">
+     </center>
+    </header>
+    <ul>
+        {% for tareas in tareas%}
+        <li class="tarea-item">
+            {{tareas.nombre}}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
