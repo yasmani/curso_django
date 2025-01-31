@@ -5,7 +5,7 @@ class RegistroUsuarioForms(forms.Form):
     email = forms.EmailField()
     password = forms.CharField(widget= forms.PasswordInput)
     password_confirmar= forms.CharField(widget= forms.PasswordInput)
-    fecha_nacimiento = forms.DateField(widget=forms.TextInput(attrs={'class': 'datepicker'}))
+    fecha_nacimiento = forms.DateField(widget=forms.TextInput(attrs={'class': 'datepicker', 'data-date-format': 'yyyy-mm-dd'}))
     
   #funcion para validar email
     def clean_email(self):
@@ -23,7 +23,7 @@ class RegistroUsuarioForms(forms.Form):
         return password
 
 #funcion para validar contraseña     
-    def clean_password_confirma(self):
+    def clean_password_confirmar(self):
         password = self.cleaned_data.get('password')
         password_confirmar = self.cleaned_data.get('password_confirmar')
         if password!=password_confirmar:

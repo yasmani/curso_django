@@ -3,8 +3,20 @@
         <title>Formulario de Registro</title>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'usuarios/style.css' %}">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $(".datepicker").datepicker({
+                    dateFormat: 'yy-mm-dd', 
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: "1900:2025" 
+                });
+            });
+          </script>
     </head>
     <body>
         <div class="form_container">
@@ -12,7 +24,27 @@
             <form method="POST">
             {% csrf_token %} 
 
-            {{ form.as_p }}
+           <!-- {{ form.as_p }} --> 
+
+            <div class="form-group">
+                <label>Nombre de usuario :  </label>
+                {{form.nombre_usuario}}
+            </div>
+
+            <div class="form-group">
+                <label>Email : </label>
+                {{form.email}}
+            </div>
+
+            <div class="form-group">
+                <label>Contraseña : </label>
+                {{form.password}}
+            </div>
+
+            <div class="form-group">
+                <label>Confirmar Contraseña : </label>
+                {{form.password_confirmar}}
+            </div>
             
             <div class="form-group">
                 <label for="id_fecha_nacimiento">Fecha de nacimiento</label>
@@ -35,15 +67,6 @@
             {% endif %}
         </div>
 
-        <script>
-            $(document).ready(function(){
-                $(".datepicker").datepicker({
-                    dateFormat: "yy-mm-dd",
-                    changeMonth: true,
-                    changeYear: true,
-                    yearRange: "1900-2025"
-                })
-            })
-        </script>
+    
     </body>
 </html>
