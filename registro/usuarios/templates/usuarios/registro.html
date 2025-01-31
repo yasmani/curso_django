@@ -2,15 +2,48 @@
     <head>
         <title>Formulario de Registro</title>
         {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'usuarios/style.css' %}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     </head>
     <body>
         <div class="form_container">
             <h1>Registro de Usuario </h1>
-            <form>
+            <form method="POST">
             {% csrf_token %} 
+
             {{ form.as_p }}
+            
+            <div class="form-group">
+                <label for="id_fecha_nacimiento">Fecha de nacimiento</label>
+                {{form.fecha_nacimiento}}
+            </div>
             <button type="submit">Registrar</button>
             </form>
+
+            {% if form.errors %}
+
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                        <li>
+                            {{error}}
+                        </li>
+                         {% endfor %}
+                         {% endfor %}
+                </ul>
+            {% endif %}
         </div>
+
+        <script>
+            $(document).ready(function(){
+                $(".datepicker").datepicker({
+                    dateFormat: "yy-mm-dd",
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: "1900-2025"
+                })
+            })
+        </script>
     </body>
 </html>

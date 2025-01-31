@@ -1,0 +1,65 @@
+.form_container{
+
+    background-color: #7edef6;
+    padding: 2em;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    margin-left: 40%;
+    
+}
+
+body{
+    background-color: hsl(163, 18%, 84%);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button[type="submit"]{
+    background-color: green;
+    color: white;
+    width: 100px;
+    margin-left: 40%;
+    margin-top: 10px;
+    height: 30px;
+}
+
+li{
+    color: red;
+    font: bold;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group{
+    margin-bottom: 15px;
+    
+}
+
+.ui-datepicker{
+    font-size: 14px;
+    background-color: bisque;
+}
+
+.ui-datepicker-header{
+    background-color: blueviolet;
+    color: white;
+}
+
+.ui-datepicker-calendar{
+    color:antiquewhite;
+}
