@@ -1,0 +1,48 @@
+{% extends "./index.html" %}
+
+{% block title %} Formulario de Contactos {% endblock %}
+
+{% block body %}
+        <div class="cuadro">
+           <center><h1>Registro de Contactos </h1></center>
+            <form method="POST">
+  
+                {% csrf_token %} 
+
+               
+
+         <div class="form-group">
+                <label>Nombre de usuario :  </label>
+                 {{ formulario.nombre }}
+            </div>
+
+            <div class="form-group">
+                <label>Apellido : </label>
+                {{ formulario.apellido }}
+            </div>
+
+            <div class="form-group">
+                <label>Celular : </label>
+              {{ formulario.celular }}
+            </div>
+            
+
+            <div class="form-group">
+                <label>Email : </label>
+                 {{ formulario.email }}
+            </div>
+
+            <div class="form-group">
+                <label>Direccion : </label>
+                 {{ formulario.direccion }}
+            </div>
+
+            
+            
+            <button type="submit">Registrar</button>
+            </form>
+
+        
+        </div>
+
+{% endblock %}

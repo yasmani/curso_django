@@ -15,8 +15,8 @@ def contacto_agregar(request):
         if formulario.is_valid():
             formulario.save()
             return redirect('contacto_lista')
-        else:
-            formulario = FormularioContacto()
-        return render(request, 'contacto/contacto_formulario.html',{'formulario': formulario})
+    else:
+        formulario = FormularioContacto()
+    return render(request, 'contacto/contacto_formulario.html',{'formulario': formulario})
     
     #realizar el CRUD

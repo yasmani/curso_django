@@ -1,0 +1,94 @@
+.cuadro{
+
+    background-color: #7edef6;
+    padding: 2em;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    margin-left: 40%;
+    margin-top: 10px;
+   
+    
+}
+
+#contenedor{
+    word-wrap: break-word;
+  }
+  
+p{
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.349);
+    font: bold;
+
+}
+
+.colori{
+    color: hsl(0, 0%, 97%);
+}
+
+form input[type="text"],
+form input[type="email"]{
+
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form textarea{
+    width: 100% !important;;
+    padding: 12px !important;;
+    margin: 8px 0 !important;;
+    border: 1px solid !important;;
+    border-radius: 4px !important;;
+    font-size: 14px !important;;
+}
+
+form button[type="submit"]{
+    background-color: green;
+    color: white;
+    width: 100px;
+    margin-left: 40%;
+    margin-top: 10px;
+    height: 30px;
+}
+
+.lista_contacto{
+    color: #093101;
+    font: bold;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .usuario-header {
+        display: none;
+    }
+    .brand-link img {
+        width: 30px; /* Ajustar el tamaño de la imagen para pantallas pequeñas */
+    }
+    .brand-text {
+        font-size: medium; /* Ajustar el tamaño del texto para pantallas pequeñas */
+        margin-left: 1em; /* Reducir el margen para pantallas pequeñas */
+    }
+}
+
+
+@media screen and (min-width: 769px) {
+    .brand-link img {
+        width: 40px; /* Tamaño normal de la imagen */
+    }
+    .brand-text {
+        font-size: larger; /* Tamaño normal del texto */
+        margin-left: 4em; /* Margen normal */
+    }
+}

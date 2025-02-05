@@ -1,21 +1,23 @@
-<html>
-    <head>
-        <title>Contactos</title>
-        {% load static %}
- 
-    </head>
-    <body>
+{% extends "./index.html" %}
+
+{% block title %} Contactos {% endblock %}
+
+{% block body %}
+
+    <div class="cuadro">
         <h1>Lista de Contactos</h1> 
-       <a href="{% url 'contacto_agregar' %}" >Agregar Contacto</a>
+       
                <ul> 
                 {% for contacto in contacto %}
-                <li>
-                    {{contacto.nombre}}
+                <li class="lista_contacto">
+                    {{contacto.nombre}}  {{contacto.apellido}}
                 </li>
                 {% endfor %}    
             </ul>
         
 
+    </div>
     
-    </body>
-</html>
+    
+{% endblock %}
+
