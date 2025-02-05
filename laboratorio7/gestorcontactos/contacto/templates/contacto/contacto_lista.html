@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Contactos</title>
+        {% load static %}
+ 
+    </head>
+    <body>
+        <h1>Lista de Contactos</h1> 
+       <a href="{% url 'contacto_agregar' %}" >Agregar Contacto</a>
+               <ul> 
+                {% for contacto in contacto %}
+                <li>
+                    {{contacto.nombre}}
+                </li>
+                {% endfor %}    
+            </ul>
+        
+
+    
+    </body>
+</html>
