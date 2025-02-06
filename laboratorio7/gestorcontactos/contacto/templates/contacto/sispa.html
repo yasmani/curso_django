@@ -1,0 +1,249 @@
+
+{% extends "./index.html" %}
+
+{% block title %} SISPA {% endblock %}
+
+{% block body %}
+
+
+
+<div id="contador_de_procesos">
+
+</div>
+
+<div class="recuadro"> 
+
+<div id="lineas_de_tiempo" style="margin-top:10px; margin-bottom:100px;" align=center>
+<label><h4>INSTAURACIÓN DE PROCESO DISCIPLINARIO</h4></label>
+
+</div>
+
+    <div class="timeline">
+      
+    <div class="timeline-point" style="background: #4E8009;">
+        <span style="top: -75px; left: 40%;"><strong>Gerencia<br>General</strong></span>
+        <span>Designación <br>del Tribunal <br>Disciplinario <br><strong> 3 días<br>Habiles </strong></span>
+    </div>
+    <div class="timeline-point" style="background: #DBA405;">
+    <span style="top: -75px; left: 40%;"><strong>Gerencia<br>General</strong></span>
+        <span>Notificar<br>inicio<br>de proceso <br>disciplinario <br><strong> 1 día Habil</strong></span>
+    </div>
+    <div class="timeline-point" style="background: #DB1805;">
+    <span style="top: -75px; left: 40%;"><strong> Tribunal<br>Disciplinario</strong></span>
+        <span>Aplicar <br>Excusas y <br> Recusaciones <br> <strong>1 día Habil</strong></span>
+    </div>
+    <div class="timeline-point" style="background: #B0ECED;">
+    <span style="top: -100px; left: 40%;"><strong>Gerencia<br>General/<br>Federación de<br>trabajadores</strong></span>
+        <span>Aceptar o <br>rechazar <br>excusas <br> <strong>1 día Habil </strong></span>
+    </div>
+    <div class="timeline-point" style="background: #EDB0E6;">
+    <span style="top: -75px; left: 40%;"><strong> Tribunal<br>Disciplinario</strong></span>
+        <span>Realizar <br> primera <br> reunión <br><strong> 1 día Habil</strong></span>
+    </div>
+    <div class="timeline-point" style="background: #1D30F0;">
+    <span style="top: -75px; left: 40%;"><strong> Tribunal<br>Disciplinario</strong></span>
+        <span>Realizar Auto <br>inicial del <br>Proceso <br> Disciplinario <br><strong>6 días Habiles</strong></span>
+    </div>
+    <div class="timeline-point" style="background: #47F01D;">
+    <span style="top: -75px; left: 40%;"><strong>Partes</strong></span>
+        <span>Realizar <br> apertura del<br> período<br> probatorio<br><strong>5 días Habiles</strong></span>
+    </div>
+    <div class="timeline-point" style="background: #AD1DF0;">
+    <span style="top: -75px; left: 40%;"><strong> Tribunal<br>Disciplinario</strong></span>
+        <span>Emitir la <br> Resolución <br> Final <br> <strong>6 días<br>Habiles</strong></span>
+    </div>
+
+    <div class="timeline-point" style="background: #FA9448;">
+    <span style="top: -75px; left: 40%;"><strong> Tribunal<br>Disciplinario</strong></span>
+        <span>Notificar la <br>Resolución <br> Final <br>al procesado <br><strong>5 días<br>Habiles</strong></span>
+    </div>
+
+    <div class="timeline-point" style="background: #FA48DC;">
+    <span style="top: -75px; left: 40%;"><strong> Trabajador<br>Procesado</strong></span>
+        <span> Solicitar <br>aclaración y/o <br>complementación<br>de la<br> Resolución Final <br>(si corresponde) <br><strong>3 días Habiles</strong></span>
+    </div>
+
+    <div class="timeline-point" style="background: #B2B2B2;">
+    <span style="top: -75px; left: 40%;"><strong> Tribunal<br>Disciplinario</strong></span>
+        <span>Realizar <br>aclaración <br>(si<br>corresponde)<br><strong>3 días<br>Habiles</strong></span>
+    </div>
+
+    <div class="timeline-point" style="background: #CBA3A3;">
+    <span style="top: -75px; left: 40%;"><strong> Trabajador<br>Procesado</strong></span>
+        <span>Apelar la <br>Resolución Final<br>(si<br>corresponde) <br><strong>5 días<br>Habiles</strong></span>
+    </div>
+   
+    <div class="timeline-point" style="background: #59E8B0;">
+    <span style="top: -75px; left: 40%;"><strong> Autoridad de<br>Apelación</strong></span>
+        <span>Emitir<br>resolución<br>de apelación<br><strong>3 días Habiles</strong></span>
+    </div>
+
+    <div class="timeline-point" style="background: #5996E8;">
+    <span style="top: -75px; left: 40%;"><strong>Tribunal<br>Disciplinario</strong></span>
+        <span>Notificar la<br>Resolución<br>Final <br><strong>5 días Habiles</strong></span>
+    </div>
+
+    <div class="timeline-point" style="background: #E85959;">
+    <span style="top: -75px; left: 40%;"><strong> Gerencia<br>General</strong></span>
+        <span>Ejecutar la<br>Resolución<br>Final<br><strong>3 días<br>Habiles</strong></span>
+    </div>
+
+
+
+</div>
+    
+</div>
+
+<div id="panel_procesos">
+
+</div>
+
+
+
+<div id="panel_procesos_iniciados" >
+
+</div>
+
+<div id="panel_procesos_rechazados" >
+
+</div>
+
+<div id="panel_procesos_concluidos" >
+
+</div>
+
+
+
+
+
+  
+
+
+
+<!-- Modal -->
+<div class="modal fade"  id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered custom-modal-width" role="document">
+    <div class="modal-content">
+        <div class="modal-header" style="background-color:#97B9CC;">
+            <h5 class="modal-title" id="myModalLabel" style="color:#F5F8F8; margin-left:50px; font: 20px;">INSTAURACIÓN DE PROCESO DISCIPLINARIO</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color:red; color:white;">
+                <span aria-hidden="true" id="cerrar1">X</span>
+            </button>
+        </div>
+        <div class="modal-body" id="contenido_modal">
+            
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" id="grabar_obs" class="btn btn-primary">Guardar cambios</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom-modal-width" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#466C4C;">
+                <h5 class="modal-title" id="myModalLabel" style="color:white; margin-left:10px; background-color:#466C4C;">DESIGNACION DE TRIBUNAL DISCIPLINARIO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color:red; color:white;">
+                    <span aria-hidden="true" id="cerrar2">X</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contenido_modal2">
+                
+            </div>
+            <div class="modal-footer">
+            <!--<a align=left href="#" id="Imprimir_tribunal"><img src="./views/dist/img/impresora.png" style="width: 50px; height: 50px;"></a>-->
+         
+                    <button align=left type="submit" id="Editar_tribunal" style="background-color:green; color:white;">Editar</button>
+       
+            <button align=left type="submit" id="Iniciar_tribunal" style="background-color:green; color:white;">Aprobar</button>
+            <button align=left  id="cerrar_tribunal" style="background-color:red; color:white;">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#466C4C;">
+               <h5 class="modal-title" id="myModalLabel" style="color:white; margin-left:10px; background-color:#466C4C;">Seguimiento a Procesos Disciplinarios - SISPA</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color:red; color:white;">
+                    <span aria-hidden="true" id="cerrar3">X</span>
+                </button>
+            </div>
+            <div class="modal-body" style="max-width: 100%;" id="contenido_modal3">
+                
+            </div>
+            <div class="modal-footer">
+            <!--<a align=left href="#" id="Imprimir_tribunal"><img src="./views/dist/img/impresora.png" style="width: 50px; height: 50px;"></a>-->
+            <button align=left type="submit" id="registrar_designacion" style="background-color:green; color:white;">REGISTRAR</button>
+           
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 40%;" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#448F63;">
+                
+                
+                <h5 class="modal-title" id="myModalLabel" style="color:white; margin-left:5%; background-color:#448F63;">Seguimiento a Procesos Disciplinarios</h5>
+ 
+              
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color:red; color:white;">
+                    <span aria-hidden="true" id="cerrar4">X</span>
+                </button>
+            </div>
+            
+            <div class="modal-body" id="contenido_modal4">
+                
+            </div>
+            <div class="modal-footer">
+            <!--<a align=left href="#" id="Imprimir_tribunal"><img src="./views/dist/img/impresora.png" style="width: 50px; height: 50px;"></a>-->
+            <button align=left type="submit" id="cargar_archivo" style="background-color:green; color:white;">Subir</button>
+           
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 35%;" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#035A21;">
+               <h5 class="modal-title" id="myModalLabel" style="color:white; margin-left:10px; background-color:#035A21;">Seguimiento a Procesos Disciplinarios - SISPA</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color:red; color:white;">
+                    <span aria-hidden="true" id="cerrar5">X</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contenido_modal5">
+                
+            </div>
+           <!-- <div class="modal-footer">
+            <a align=left href="#" id="Imprimir_tribunal"><img src="./views/dist/img/impresora.png" style="width: 50px; height: 50px;"></a>
+             <button align=left type="submit" id="cargar_archivo" style="background-color:green; color:white;">Subir</button>
+           
+            </div>-->
+        </div>
+    </div>
+</div>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+{% endblock %}

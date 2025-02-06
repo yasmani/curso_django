@@ -4,6 +4,9 @@ from .forms import FormularioContacto
 
 # Create your views here.
 
+def sispa_index(request):
+    return render(request,'contacto/sispa.html')
+
 def contacto_lista(request):
     contacto = Contacto.objects.all()
     return render(request,'contacto/contacto_lista.html',{'contacto': contacto})
@@ -18,5 +21,6 @@ def contacto_agregar(request):
     else:
         formulario = FormularioContacto()
     return render(request, 'contacto/contacto_formulario.html',{'formulario': formulario})
+    
     
     #realizar el CRUD

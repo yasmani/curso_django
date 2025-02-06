@@ -6,7 +6,8 @@
         <link rel="stylesheet" type="text/css" href="{% static 'contacto/css/style.css' %}">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <!-- AdminLTE CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+      
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -34,10 +35,15 @@
 
         <script>
         $.widget.bridge('uibutton', $.ui.button)
+
+
+ 
         </script>
    
+       
     </head>
-   <body class="sidebar-mini layout-fixed control-sidebar-slide-open layout-navbar-fixed layout-footer-fixed">
+  <body class="sidebar-mini control-sidebar-slide-open layout-fixed layout-navbar-fixed layout-footer-fixed" style="background-color: #ffffff;">
+
 
 <div class="wrapper">
    <!-- Navbar -->
@@ -46,7 +52,9 @@
         <!-- Start navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" data-lte-toggle="sidebar-full" href="#" role="button"><i class="fas fa-bars" style="color: #D4D6E1;"></i></a>
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+                <i class="fas fa-bars" style="color: #D4D6E1;"></i>
+            </a>
             </li>
             <li class="nav-item d-none d-md-inline" style="margin-top: 2px;">
                 <a href="#" class="brand-link">
@@ -64,24 +72,25 @@
 <!-- /.navbar -->
     <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-bg-dark sidebar-color-primary shadow" style="background-color: white;">
-<div class="brand-container" style="position:absolute; width:100%; margin: top 10px;">
+<div class="brand-container" style="position:absolute; width:80%; margin: top 10px;">
    <center> <img src="{% static 'contacto/img/datacom.png' %}" width="130" class="brand-image opacity-80"></center>
 </div>
   <!-- Sidebar -->
+
   <div class="sidebar os-host os-theme-light os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-transition os-host-overflow os-host-overflow-y">
     <div class="os-resize-observer-host observed">
         <div class="os-resize-observer" style="left: 0px; right: auto;">
         </div>
     </div>
-    <div class="os-size-auto-observer observed" style="height: calc(100% + 1px); float: left;">
+    <div class="os-size-auto-observer observed">
         <div class="os-resize-observer">
         </div>
     </div>
-    <div class="os-content-glue" style="margin: -8px; width: 249px; height: 53px;">
+    <div class="os-content-glue">
     </div>
     <div class="os-padding">
     <div class="os-viewport os-viewport-native-scrollbars-invisible" style="overflow-y: scroll;">
-    <div class="os-content" style="padding: 8px; height: 100%; width: 100%; background-color: #4F776C;">
+    <div class="os-content" style="padding: 5px; height: 100%; width: 100%; background-color: #4F776C;">
     <nav style="background-color: #4F776C;">
     <div class="card card-primary card-outline">
     <div class="card-body box-profile">
@@ -90,6 +99,7 @@
         <img class="profile-user-img img-fluid img-circle" src="{% static 'contacto/img/3022662.png' %}"  alt="User profile picture"/>
        
   </div>
+  
   <h4 class="Garet-Book profile-username text-center" style="color: #1B246F; margin-bottom: 0px;">Bienvenido 
   <p class="text-muted text-center" style="margin-bottom: 0px; font-size: medium;">
   Yasmani Gutierrez flores</p></h4></div></div>
@@ -98,9 +108,9 @@
       <p>MENU PRINCIPAL</p></li>
 
 
-      <li class="nav-item active" id="tab-index"><a href="{% url 'contacto_lista' %}" class="nav-link"><i class="fas fa-home colori"></i><p> Inicio</p></a></li>  
+      <li class="nav-item active" id="tab-index"><a href="{% url 'sispa_index' %}" class="nav-link"><i class="fas fa-home nav-icon colori"></i><p> Inicio</p></a></li>  
 
-     
+        <li class="nav-item" id="tab-lista"><a href="{% url 'contacto_lista' %}" class="nav-link"><i class="fas fa-book  nav-icon colori"></i><p>  Lista</p></a></li>  
        <li class="nav-item" id="tab-SeccionSeis"><a href="{% url 'contacto_agregar' %}" class="nav-link"><i class="fas fa-folder nav-icon colori"></i><p> Agregar</p></a></li>
      
       <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-power-off nav-icon colori"></i><p> Salir</p></a></li>
@@ -123,7 +133,7 @@
 </footer>
 
 
-<div class="content-wrapper">
+<div class="contenedor-wrapper">
 
  {% block body %} 
     
