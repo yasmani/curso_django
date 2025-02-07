@@ -8,13 +8,32 @@
 
         <h1>Lista de Contactos</h1> 
        
-               <ul> 
+               <table style="width:80%;"> 
+                <thead>
+                <th class="lista_contacto">Nombre</th>
+                <th class="lista_contacto">Apellido</th>   
+                <th colspan="2" class="lista_contacto">Opciones</th>
+                </thead>
+                <tbody>
+
                 {% for contacto in contacto %}
-                <li class="lista_contacto">
-                    {{contacto.nombre}}  {{contacto.apellido}}
-                </li>
-                {% endfor %}    
-            </ul>
+                <tr>
+                <td class="lista_contacto">
+                    {{contacto.nombre}} 
+                </td>  
+                <td class="lista_contacto"> 
+                    {{contacto.apellido}}
+                </td>
+                <td class="lista_contacto">
+                    <a href="{% url 'contacto_editar' contacto.pk %}" ><i class="fa-solid fa-pen-to-square" style="color:green;"></i></a> 
+                </td>
+                    <td class="lista_contacto">
+                    <a href="{% url 'elimina_contacto' %}" ><i class="fa-solid fa-trash" style="color:red;"></i></a> 
+                </td>
+            </tr>
+                {% endfor %} 
+            </tbody>   
+            </table>
         
 
     </div>

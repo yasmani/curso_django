@@ -1,12 +1,12 @@
 .cuadro{
 
-    background-color: #7edef6;
+    background-color: hsl(192, 17%, 94%);
     padding: 2em;
     border-radius: 8px;
     width: 30%;
     margin-left: 20%;
     max-width: 40%;
-
+    box-shadow: 0 0 10px 0 rgba(0,0,0.2);
     margin-top: 4%;
     
    
@@ -76,6 +76,9 @@ form button[type="submit"]{
 .lista_contacto{
     color: #093101;
     font: bold;
+    border: 2px solid;
+    margin-right: 10px;
+    padding: 20px;
 }
 
 form{
