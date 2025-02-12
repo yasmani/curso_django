@@ -1,0 +1,21 @@
+{% extends "./index.html" %}
+
+{% block title %} Confirmar Eliminar {% endblock %}
+
+{% block body %}
+
+<div class="cuadro">
+
+    <h1>Lista de Contactos...</h1>
+    <p style="color: red;">Esta seguro de eliminar al contacto: {{ contacto.nombre }} </p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Eliminar </button>
+    </form>
+    <a href="{% url 'contacto_lista' %}">Cancelar </a>
+
+</div>
+    
+    
+{% endblock %}
+

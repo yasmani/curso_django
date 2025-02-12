@@ -43,7 +43,9 @@ def contacto_editar(request, pk):
     
 def elimina_contacto(request, pk):
     contacto=get_object_or_404(Contacto, pk=pk)
-    contacto.delete()
-    messages.success(request,'Contacto Eliminado..')
-    return redirect('contacto_lista')
+    if request.method == "POST":
+        contacto.delete()
+        messages.success(request,'Contacto Eliminado..')
+        return redirect('contacto_lista')
+    return render(request, 'contacto/contacto_confirmar_eliminar.html',{'contacto': contacto})
      
