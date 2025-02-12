@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout,authenticate
-from .forms import RegisterForm,LoginForm
+from .forms import LoginForm
 
 # Create your views here.
 def login_vista(request):
@@ -8,14 +8,14 @@ def login_vista(request):
         formulario = LoginForm(request, data=request.POST)
         if formulario.is_valid():
             nombre_usuario = formulario.cleaned_data.get('nombre_usuario')
-            contrasena = formulario.cleaned_data.get('contrasenaa') 
+            contrasena = formulario.cleaned_data.get('contrasena') 
             user = authenticate(nombre_usuario=nombre_usuario, contrasena=contrasena)
             if user is not None:
                 login(request, user)
                 return redirect('home')
     else:
         formulario = LoginForm()
-    return render(request, 'usuario/login.html',{'formulario': formulario})
+    return render(request, 'usuarios/login.html',{'formulario': formulario})
     
     
 #def registro(request):
