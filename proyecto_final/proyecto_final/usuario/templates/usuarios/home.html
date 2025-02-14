@@ -1,0 +1,16 @@
+{% extends "./index.html" %}
+
+{% block body %}
+<center>
+<div class="cuadrito">
+<h1>Lista de Usuarios</h1>
+{% for usuario in usuarios %}
+<li>
+    
+        {{usuario.username}} 
+    
+</li>
+{% endfor %}
+</div>
+</center>
+{%endblock%}

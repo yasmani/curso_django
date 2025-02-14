@@ -1,27 +1,39 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout,authenticate
-from .forms import LoginForm
+from django.contrib.auth.forms import AuthenticationForm
+from .forms import RegistroForm
+from .models import Usuario
 
 # Create your views here.
 def login_vista(request):
     if request.method == 'POST':
-        formulario = LoginForm(request, data=request.POST)
+        formulario = AuthenticationForm(request, data=request.POST)
         if formulario.is_valid():
-            nombre_usuario = formulario.cleaned_data.get('nombre_usuario')
-            contrasena = formulario.cleaned_data.get('contrasena') 
-            user = authenticate(nombre_usuario=nombre_usuario, contrasena=contrasena)
-            if user is not None:
-                login(request, user)
-                return redirect('home')
+           usuario = formulario.get_user()
+           login(request,usuario)
+           return redirect('home')
     else:
-        formulario = LoginForm()
+        formulario = AuthenticationForm()
     return render(request, 'usuarios/login.html',{'formulario': formulario})
     
     
-#def registro(request):
+def registro_vista(request):
+    if request.method == 'POST':
+        formulario = RegistroForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            username = formulario.cleaned_data.get('username')
+            passwoord = formulario.cleaned_data.get('passwoord1')
+            usuario = authenticate(username=username, passwoord=passwoord)
+            login(request,usuario)
+            return redirect('login')
+    else:
+        formulario = RegistroForm()
+    return render(request, 'usuarios/registro.html', {'formulario': formulario})
     
-    
-#def home_vista(request):
+def home_vista(request):
+    usuarios = Usuario.objects.all()
+    return render(request,'usuarios/home.html',{'usuarios': usuarios})
     
     
     
