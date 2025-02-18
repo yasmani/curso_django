@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout,authenticate
 from django.contrib.auth.forms import AuthenticationForm
-from .forms import RegistroForm
+from .forms import RegistroForm, LoginForm
 from .models import Usuario
 
 # Create your views here.
@@ -13,7 +13,8 @@ def login_vista(request):
            login(request,usuario)
            return redirect('home')
     else:
-        formulario = AuthenticationForm()
+     #  formulario = AuthenticationForm()
+        formulario = LoginForm()
     return render(request, 'usuarios/login.html',{'formulario': formulario})
     
     
@@ -37,4 +38,3 @@ def home_vista(request):
     
     
     
-#def logout_vista(request):
