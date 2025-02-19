@@ -13,8 +13,8 @@ def login_vista(request):
            login(request,usuario)
            return redirect('home')
     else:
-     #  formulario = AuthenticationForm()
-        formulario = LoginForm()
+        formulario = AuthenticationForm()
+        #formulario = LoginForm()
     return render(request, 'usuarios/login.html',{'formulario': formulario})
     
     
